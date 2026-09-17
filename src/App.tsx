@@ -18,6 +18,7 @@ import SiteIndex from "./site/pages/Index";
 import SiteFeatures from "./site/pages/Features";
 import SiteIndustries from "./site/pages/Industries";
 import SiteEyeClinics from "./site/pages/EyeClinics";
+import SiteEyeClinicFeatures from "./site/pages/EyeClinicFeatures";
 import SiteAbout from "./site/pages/About";
 import SiteContact from "./site/pages/Contact";
 import SitePrivacy from "./site/pages/Privacy";
