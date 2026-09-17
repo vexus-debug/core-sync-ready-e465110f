@@ -25,6 +25,7 @@ const industries = [
   },
   {
     icon: Eye,
+    learnMore: "/industries/eye-clinics",
     title: "Eye Care & Optometry Clinics",
     tagline: "See your practice clearly — for the first time.",
     description: "Between visual acuity records, prescription histories, lens inventory, and specialist referrals, optometry practices have unique data management challenges. Clinexus understands every one of them.",
