@@ -25,6 +25,7 @@ const industries = [
   },
   {
     icon: Eye,
+    learnMore: "/industries/eye-clinics",
     title: "Eye Care & Optometry Clinics",
     tagline: "See your practice clearly — for the first time.",
     description: "Between visual acuity records, prescription histories, lens inventory, and specialist referrals, optometry practices have unique data management challenges. Clinexus understands every one of them.",
@@ -225,11 +226,23 @@ const Industries = () => {
                     </li>
                   ))}
                 </ul>
-                <a href="/signup">
-                  <Button className="mt-2 gap-2 rounded-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--medical-teal))] px-8 text-white shadow-md hover:opacity-90">
-                    Get Started <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </a>
+                <div className="mt-2 flex flex-wrap gap-3">
+                  <a href="/signup">
+                    <Button className="gap-2 rounded-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--medical-teal))] px-8 text-white shadow-md hover:opacity-90">
+                      Get Started <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </a>
+                  {"learnMore" in ind && ind.learnMore && (
+                    <Link to={ind.learnMore as string}>
+                      <Button
+                        variant="outline"
+                        className="gap-2 rounded-full border-primary px-8 text-primary hover:bg-primary/10"
+                      >
+                        Know more <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </Link>
+                  )}
+                </div>
               </div>
               <div className="flex-1">
                 <div className="relative overflow-hidden rounded-3xl border border-border/50 bg-gradient-to-br from-card/90 to-muted/40 p-8 shadow-lg">
