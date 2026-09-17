@@ -19,13 +19,20 @@ export function isIos() {
   return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
 }
 
-/** Public-facing pages (marketing site, clinic sites, results) must stay plain
- *  websites: no service worker, no manifest, no install UI. The PWA is only for
- *  the dashboard/app pages. */
-const PUBLIC_EXACT_PATHS = ["/", "/features", "/industries", "/about", "/contact", "/privacy", "/terms", "/demo", "/result"];
+/** The PWA (service worker, manifest, install UI) is only offered on the
+ *  app pages: login, signup and everything inside the clinic/admin
+ *  dashboards. Every other page stays a plain website. */
+const APP_EXACT_PATHS = ["/login", "/signup", "/select-clinic"];
+export function isAppInstallPath(pathname = window.location.pathname) {
+  if (APP_EXACT_PATHS.includes(pathname)) return true;
+  return (
+    pathname.startsWith("/clinic/") ||
+    pathname.startsWith("/admin")
+  );
+}
+
 export function isPublicSitePath(pathname = window.location.pathname) {
-  if (PUBLIC_EXACT_PATHS.includes(pathname)) return true;
-  return pathname.startsWith("/site/");
+  return !isAppInstallPath(pathname);
 }
 
 /** Contexts where a service worker must never be registered. */
