@@ -137,7 +137,7 @@ const EyeClinics = () => {
                 Talk to us on WhatsApp
               </a>
               <Link
-                to="/features"
+                to="/industries/eye-clinics/features"
                 className="inline-flex items-center gap-2 rounded-full border border-primary px-10 py-4 font-bold text-primary transition-colors hover:bg-primary/10"
               >
                 See the full feature list
